@@ -4,6 +4,7 @@
 require 'scraperwiki'
 require 'mechanize'
 require 'pry-debugger'
+require 'json'
 
 agent = Mechanize.new
 
@@ -13,6 +14,8 @@ page = agent.get("https://api.bountysource.com/teams/crystal-lang")
 
 # Find somehing on the page using css selectors
 data = JSON.parse(page.body)
+
+puts JSON.pretty_generate(data)
 
 # Write out to the sqlite database using scraperwiki library
 ScraperWiki.save_sqlite(["timestamp"], {
