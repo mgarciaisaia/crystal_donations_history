@@ -3,7 +3,7 @@
 
 require 'scraperwiki'
 require 'mechanize'
-require 'pry-debugger'
+require 'pry-byebug'
 require 'json'
 
 agent = Mechanize.new
