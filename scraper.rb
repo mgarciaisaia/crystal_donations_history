@@ -9,6 +9,10 @@ require 'json'
 agent = Mechanize.new
 
 agent.request_headers = { 'accept' => 'application/vnd.bountysource+json; version=2'}
+
+#Ignore SSL certs
+agent.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
 # Read in a page
 page = agent.get("https://api.bountysource.com/teams/crystal-lang")
 
