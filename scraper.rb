@@ -29,6 +29,8 @@ ScraperWiki.save_sqlite(["timestamp"], {
   "support_level_count" => data['support_level_count'],
   "monthly_contributions_sum" => data['monthly_contributions_sum'],
   "monthly_contributions_count" => data['monthly_contributions_count'],
+  "previous_month_contributions_sum" => data['previous_month_contributions_sum'],
+  "raw_data" => page.body
 })
 
 # An arbitrary query against the database
