@@ -60,3 +60,18 @@ jobs:
       - store_artifacts:
           path: ~/repo/data.sqlite
           # destination: test-results
+
+workflows:
+  version: 2
+  commit-workflow:
+    jobs:
+      - build
+  scheduled-workflow:
+    triggers:
+      - schedule:
+          cron: "0 1 * * *"
+          filters:
+            branches:
+              only: circleci
+    jobs:
+      - build
