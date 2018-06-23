@@ -34,10 +34,7 @@ jobs:
 
       # Database setup
       - run: bundle install --jobs=4 --retry=3 --path vendor/bundle
-      - run: pwd
-      - run:
-          command: bundle exec ruby ./scrapper.rb
-          working_directory: ~/repo
+      - run: bundle exec ruby ./scraper.rb
 
       - save_cache:
           paths:
